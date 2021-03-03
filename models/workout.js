@@ -19,18 +19,18 @@ const workoutSchema = new Schema(
                 {
                     type: String,
                     trim: true,
-                    required: "Enter a workout type"
+                    required: "Enter a type of workout"
                 },
                 name:
                 {
                     type: String,
                     trim: true,
-                    required: "Enter a workout name"
+                    required: "Enter a name for your workout"
                 },
                 duration:
                 {
                     type: Number,
-                    required: "Enter the duration (min)"
+                    required: "Enter the duration (min) for your workout"
                 },
                 weight:
                 {
@@ -64,6 +64,6 @@ workoutSchema.virtual('totalDuration').get(function () {
 // ===========================================================
 // Setup for export
 // ===========================================================
-const Workout = mongoose.model("Workout", workoutSchema);
+const Workout = mongoose.model("workouts", workoutSchema);
 
 module.exports = Workout;
