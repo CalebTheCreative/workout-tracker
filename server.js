@@ -5,7 +5,6 @@ const express = require("express");
 const logger = require("morgan");
 var Promise = require("bluebird");
 const mongoose = require("mongoose");
-
 Promise.promisifyAll(mongoose);
 
 
