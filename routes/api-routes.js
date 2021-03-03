@@ -2,7 +2,7 @@
 // Dependencies
 // ===========================================================
 const router = require("express").Router();
-const Workout = require("../models/workout.js");
+const db = require('../models/');
 
 // ===========================================================
 // API Routes
@@ -10,7 +10,7 @@ const Workout = require("../models/workout.js");
     
 // Show last workout
 router.get("/api/workouts", (req, res) => {
-    Workout.find({})
+    db.Workout.find({})
         .then(dbWorkout => {
             console.log(dbWorkout);
             res.json(dbWorkout);
@@ -22,7 +22,7 @@ router.get("/api/workouts", (req, res) => {
 
 // Add a workout
 router.post("/api/workouts", ({body}, res) => {
-    Workout.create(body)
+    db.Workout.create(body)
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -33,7 +33,7 @@ router.post("/api/workouts", ({body}, res) => {
 
 // Update a workout
 router.put("/api/workouts/:id", (req, res) => {
-    Workout.updateOne(
+    db.Workout.updateOne(
         { _id: req.params.id },
         { $push: { workouts: req.body}}
     ).then (dbWorkout => {
@@ -45,7 +45,7 @@ router.put("/api/workouts/:id", (req, res) => {
 
 // View several workouts
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
+    db.Workout.find({})
         .sort({ _id: -1 })
         .then(dbWorkout => {
             console.log(dbWorkout);

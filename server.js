@@ -34,6 +34,8 @@ mongoose.connect(
 // ===========================================================
 // Routes
 // ===========================================================
+const db = require("./models");
+
 app.use(require('./routes/api-routes'));
 app.use(require('./routes/html-routes'));
 
