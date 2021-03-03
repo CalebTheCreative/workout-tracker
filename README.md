@@ -34,6 +34,7 @@ If deploying locally:
 Otherwise, no installation needed
 
 ## Technologies Used
+
 - HTML
 - CSS
 - Javascript
@@ -41,6 +42,10 @@ Otherwise, no installation needed
 - AtlasDB
 - MongoDB
 - Express
+
+## Challenges Faced
+
+Getting mongoDB/AtlasDB to agree with the code was the most challenging part of the assignment. Local deployment would work with database while Heroku would not. AtlasDB doesn't like for there to be an empty database being sent to it at first launch.
 
 ## Questions
 
