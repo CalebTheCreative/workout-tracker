@@ -14,6 +14,7 @@ const db = require("../models/");
 router.get("/api/workouts", (req, res) => {
     db.Workout.find({})
         .then(dbWorkout => {
+            console.log("RETRIEVED EXERCISE OBJECT: ");
             console.log(dbWorkout);
             res.json(dbWorkout);
         }).catch(error => {
@@ -48,6 +49,7 @@ router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
         .sort({ _id: -1 })
         .then(dbWorkout => {
+            console.log("EXERCISE RANGE OBJECT: ");
             console.log(dbWorkout);
             res.json(dbWorkout);
         }).catch(error => {
